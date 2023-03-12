@@ -1,8 +1,9 @@
 export const categories = [
-    "all News",
-    "india",
     "business",
+    "entertainment",
+    "general",
+    "health",
+    "science",
     "sports",
-    "worlds", 
-    "politics"
+    "technology"
 ]
