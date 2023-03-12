@@ -4,7 +4,6 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import NavBarInshorts from "./components/NavBarInshorts"
 import NewsContent from "./components/NewsContent/NewsContent";
-import {apikey} from "./components/data/config"
 
 function App() {
   const [news, setNews] = useState([]);
@@ -15,9 +14,9 @@ function App() {
   
   const getNews = async () => {
     try {
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      //const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       const news = await axios.get(
-        `https://${proxyUrl}newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&pageSize=${loadmore}&category=${category}`
+        `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&pageSize=${loadmore}&category=${category}`
       );
       setNews(news.data.articles);
       setTotalNews(news.data.totalResults);
